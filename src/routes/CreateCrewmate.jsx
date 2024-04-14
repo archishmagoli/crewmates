@@ -6,7 +6,7 @@ const CreateCrewmate = () => {
     const [crewmate, setCrewmate] = useState({
         name: "",
         speed: 0,
-        is_imposter: false,
+        is_imposter: 'no',
         color: ""
     });
 
@@ -18,7 +18,7 @@ const CreateCrewmate = () => {
         .insert({name: crewmate.name, 
             speed: crewmate.speed, 
             color: crewmate.color,
-            is_imposter: crewmate.is_imposter
+            is_imposter: crewmate.is_imposter === 'yes'
         })
         .select();
 
@@ -41,19 +41,27 @@ const CreateCrewmate = () => {
         <div className="content">
             <h1>Create a New Crewmate!</h1>
             <form className='form' onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label><br />
-                <input type="text" id="name" name="name" value={crewmate.name} onChange={handleChange} required /><br /><br />
+                <label htmlFor="name">Name Your Imposter:</label>
+                <input type="text" id="name" name="name" value={crewmate.name} onChange={handleChange} required />
+                
+                <br /><br />
 
-                <label htmlFor="speed">Speed</label><br />
-                <input type="number" id="speed" name="speed" min='0' max='100' value={crewmate.speed} onChange={handleChange} required /><br /><br />
+                <label htmlFor="speed">Select Speed:</label>
+                <input type="number" id="speed" name="speed" min='0' max='100' value={crewmate.speed} onChange={handleChange} required />
+                
+                <br /><br />
 
-                <label>Is Imposter?</label><br />
-                <input type="radio" id="imposter_yes" name="is_imposter" value="yes" checked={crewmate.is_imposter === true} onChange={handleChange} required />
-                <label htmlFor="imposter_yes">Yes</label>
-                <input type="radio" id="imposter_no" name="is_imposter" value="no" checked={crewmate.is_imposter === false} onChange={handleChange} />
-                <label htmlFor="imposter_no">No</label><br /><br />
-
-                <label htmlFor="color">Color:</label><br />
+                <label>Is this Crewmate an Imposter?</label>
+                <br />
+                <label className='imposter'>
+                    <input type="radio" name="is_imposter" value="yes" onChange={handleChange} />Yes
+                </label>
+                <br />
+                <label className='imposter'>
+                    <input type="radio" name="is_imposter" value="no" onChange={handleChange} />No
+                </label>
+                <br /><br />
+                <label htmlFor="color">Choose a Color:</label>
                 <select id="color" name="color" value={crewmate.color} onChange={handleChange} required>
                     <option value="">Select a color</option>
                     <option value="red">Red</option>
