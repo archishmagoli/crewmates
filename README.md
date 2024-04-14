@@ -1,8 +1,47 @@
-# React + Vite
+# Web Development Project 7 - *Crewmate Creator*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Submitted by: **Archishma Goli**
 
-Currently, two official plugins are available:
+This web app: **allows you to create, update, and delete crewmates!**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Time spent: **5** hours spent in total
+
+## Required Features
+
+The following **required** functionality is completed:
+
+- [x] **A create form allows users to add new cremates**
+- [x] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
+- [x] **The site displays a summary page of all the user's added crewmates**
+- [x] **A previously created crewmate can be updated from the crewmate list**
+- [x] **A previously created crewmate can be deleted from the crewmate list**
+- [x] **Each crewmate has a direct, unique link to an info page about them**
+
+The following **optional** features are implemented:
+
+- [ ] A crewmate can be given a category upon creation which restricts their attributes
+- [ ] The site displays summary statistics about a user's crew on their crew page 
+- [ ] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
+
+## Video Walkthrough
+
+<a href='https://drive.google.com/file/d/1NhucZRW7B4nv1r6a8qeLOkVRfdIFn_91/view?usp=sharing'>Here's a walkthrough</a> of implemented user stories.
+
+## Notes
+I enjoyed learning about CRUD operations in this project!
+
+## License
+
+    Copyright [2024] [Archishma Goli]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

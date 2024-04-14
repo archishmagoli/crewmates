@@ -19,8 +19,9 @@ const CrewDetail = () => {
     }, [])
 
     return (
-        <div>
+        <>
             <h1>Crewmate Gallery</h1>
+            <div className='gallery'>
             {
                 crewmates === null || crewmates.length === 0 ?
                 <div>
@@ -48,7 +49,7 @@ const CrewDetail = () => {
                 )
             }
         </div>
-        
+        </>
     );
   };
   
