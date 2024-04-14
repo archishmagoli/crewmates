@@ -26,6 +26,7 @@ const CreateCrewmate = () => {
     }
 
     const handleChange = (e) => {
+        e.preventDefault();
         const { name, value } = e.target;
         setCrewmate({
             ...crewmate,
@@ -33,7 +34,8 @@ const CreateCrewmate = () => {
         });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log(crewmate);
     }
 
