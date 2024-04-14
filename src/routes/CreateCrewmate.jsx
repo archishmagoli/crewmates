@@ -1,4 +1,4 @@
-import '../index.css';
+import '../App.css';
 import { supabase } from '../client';
 import { useState } from 'react';
 
@@ -10,21 +10,6 @@ const CreateCrewmate = () => {
         color: ""
     });
 
-    const createCrewmate = async (event) => {
-        event.preventDefault();
-
-        await supabase
-        .from('my_crewmates')
-        .insert({name: crewmate.name, 
-            speed: crewmate.speed, 
-            color: crewmate.color,
-            is_imposter: crewmate.is_imposter === 'yes'
-        })
-        .select();
-
-        window.location = "/crewmates/gallery";
-    }
-
     const handleChange = (e) => {
         e.preventDefault();
         const { name, value } = e.target;
@@ -34,16 +19,41 @@ const CreateCrewmate = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(crewmate);
-    }
+    
+        try {
+            const { data, error } = await supabase
+                .from('my_crewmates')
+                .insert({
+                    name: crewmate.name, 
+                    speed: crewmate.speed, 
+                    color: crewmate.color,
+                    is_imposter: crewmate.is_imposter === 'yes'
+                });
+    
+            if (error) {
+                throw error;
+            }
+    
+            alert('Crewmate created successfully!', data);
+        } catch (error) {
+            alert('Error creating crewmate: ' + error.message);
+        }
+    };
+
+    const handleImposterChange = (e) => {
+        setCrewmate({
+            ...crewmate,
+            is_imposter: e.target.value
+        });
+    };
 
     return (
         <div className="content">
             <h1>Create a New Crewmate!</h1>
             <form className='form' onSubmit={handleSubmit}>
-                <label htmlFor="name">Name Your Imposter:</label>
+                <label htmlFor="name">Name Your Crewmate:</label>
                 <input type="text" id="name" name="name" value={crewmate.name} onChange={handleChange} required />
                 
                 <br /><br />
@@ -56,11 +66,11 @@ const CreateCrewmate = () => {
                 <label>Is this Crewmate an Imposter?</label>
                 <br />
                 <label className='imposter'>
-                    <input type="radio" name="is_imposter" value="yes" onChange={handleChange} />Yes
+                    <input type="radio" name="is_imposter" value="yes" checked={crewmate.is_imposter === 'yes'} onChange={handleImposterChange} />Yes
                 </label>
                 <br />
                 <label className='imposter'>
-                    <input type="radio" name="is_imposter" value="no" onChange={handleChange} />No
+                    <input type="radio" name="is_imposter" value="no" checked={crewmate.is_imposter === 'no'} onChange={handleImposterChange} />No
                 </label>
                 <br /><br />
                 <label htmlFor="color">Choose a Color:</label>

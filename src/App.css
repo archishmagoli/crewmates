@@ -69,3 +69,15 @@ select {
 input[type="radio"] {
   margin-right: 5px;
 }
+
+.crewmateCard {
+  border: 1px solid white;
+  width: 20em;
+  height: 20em;
+  background-color: black;
+}
+
+.crewmateImage {
+  height: 10em;
+  width: 10em;
+}
