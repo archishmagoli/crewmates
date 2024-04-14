@@ -38,6 +38,12 @@ const CrewDetail = () => {
                         <p><b>Speed: </b>{crewmate.speed}</p>
                         <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
                         <img className='crewmateImage' src={'src\\assets\\' + crewmate.color + '.webp'}></img>
+                        <br></br>
+                        <Link to={"/crewmates/details/" + crewmate.id}>
+                            <button className='button'>
+                                View Details 
+                            </button>
+                        </Link>
                     </div>
                 )
             }

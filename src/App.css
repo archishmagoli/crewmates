@@ -72,12 +72,31 @@ input[type="radio"] {
 
 .crewmateCard {
   border: 1px solid white;
-  width: 20em;
-  height: 20em;
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
   background-color: black;
+  padding-bottom: 0.5em;
 }
 
 .crewmateImage {
   height: 10em;
   width: 10em;
+}
+
+.button-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.button-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.crewmateDetail {
+  border: 1px solid white;
+  padding-bottom: 3em;
 }

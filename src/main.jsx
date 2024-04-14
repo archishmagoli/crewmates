@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from './routes/Layout';
 import CrewDetail from './routes/CrewDetail.jsx';
 import CreateCrewmate from './routes/CreateCrewmate.jsx';
+import DetailView from './routes/DetailView.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index={true} path='/crewmates' element={<App />} />
           <Route index={false} path="/crewmates/gallery" element={<CrewDetail />} />
           <Route index={false} path="/crewmates/create" element={<CreateCrewmate />} />
+          <Route index={false} path="/crewmates/details/:id" element={<DetailView />} />
         </Route>
       </Routes>
     </BrowserRouter>
