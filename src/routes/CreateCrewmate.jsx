@@ -37,8 +37,9 @@ const CreateCrewmate = () => {
             }
     
             alert('Crewmate created successfully!', data);
+            window.location = 'crewmates/gallery'
         } catch (error) {
-            alert('Error creating crewmate: ' + error.message);
+            alert('Error creating crewmate. Remember that your crewmate`s name MUST be unique.');
         }
     };
 
@@ -50,7 +51,7 @@ const CreateCrewmate = () => {
     };
 
     return (
-        <div className="content">
+        <div>
             <h1>Create a New Crewmate!</h1>
             <form className='form' onSubmit={handleSubmit}>
                 <label htmlFor="name">Name Your Crewmate:</label>
@@ -87,7 +88,7 @@ const CreateCrewmate = () => {
                     <option value="brown">Brown</option>
                 </select><br /><br />
 
-                <input className='button' type="submit" value="Submit" />
+                <input className='button button-submit' type="submit" value="Submit" />
             </form>
         </div>
         

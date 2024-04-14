@@ -18,10 +18,32 @@ const DetailView = () => {
         };
 
         fetchCrewmate();
-    }, [])
+    }, []);
+
+    const deleteCrewmate = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const { error } = await supabase
+                .from('my_crewmates')
+                .delete()
+                .eq('id', params.id);
+
+    
+            if (error) {
+                throw error;
+            }
+    
+            alert('Successfully deleted crewmate.')
+            window.location = '/crewmates/gallery';
+        } catch (error) {
+            alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
+
+        }
+    };
     
     return (
-        <>
+        <div>
             {crewmate !== null ? (
                 <div className='crewmateDetail' key={crewmate.id}>
                     <h2><b>{crewmate.name}</b></h2>
@@ -36,12 +58,12 @@ const DetailView = () => {
                     </Link>
                     <br></br>
                     <br></br>
-                    <button className='button button-danger'>Delete Crewmate</button>
+                    <button className='button button-danger' onClick={deleteCrewmate}>Delete Crewmate</button>
                 </div>
             ) : (
                 <p>Loading...</p>
             )}
-        </>
+        </div>
     );
   };
   

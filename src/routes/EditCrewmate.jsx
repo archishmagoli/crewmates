@@ -49,7 +49,8 @@ const EditCrewmate = () => {
             alert('Crewmate updated successfully!');
             window.location = '/crewmates/details/' + params.id;
         } catch (error) {
-            alert('Error updating crewmate: ' + error.message);
+            alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
+
         }
     };
 
@@ -61,7 +62,7 @@ const EditCrewmate = () => {
     };
 
     return (
-        <>
+        <div>
             { crewmate === null ? <p>Loading...</p> :
             <div className="content">
                 <h1>Edit Your Crewmate</h1>
@@ -100,11 +101,11 @@ const EditCrewmate = () => {
                         <option value="brown">Brown</option>
                     </select><br /><br />
 
-                    <input className='button' type="submit" value="Submit" />
+                    <input className='button button-submit' type="submit" value="Submit" />
                 </form>
             </div>
             }
-        </>
+        </div>
         
     );
 };

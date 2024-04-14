@@ -19,14 +19,14 @@ const CrewDetail = () => {
     }, [])
 
     return (
-        <div className="content">
+        <div>
             <h1>Crewmate Gallery</h1>
             {
                 crewmates === null || crewmates.length === 0 ?
                 <div>
                     <h2>No crewmates yet!</h2>
                     <Link to="/crewmates/create">
-                        <button className='button'>
+                        <button className='button button-detail'>
                         Create a Crewmate Here! 
                         </button>
                     </Link>
@@ -40,7 +40,7 @@ const CrewDetail = () => {
                         <img className='crewmateImage' src={'src\\assets\\' + crewmate.color + '.webp'}></img>
                         <br></br>
                         <Link to={"/crewmates/details/" + crewmate.id}>
-                            <button className='button'>
+                            <button className='button button-detail'>
                                 View Details 
                             </button>
                         </Link>
