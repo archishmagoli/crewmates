@@ -27,6 +27,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      PROJECT_URL: ${{ secrets.PROJECT_URL }}
+      API_KEY: ${{ secrets.API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,7 +52,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Set up Secrets
-        run: |
-          echo "::set-env name=PROJECT_URL::${{ secrets.PROJECT_URL }}"
-          echo "::set-env name=API_KEY::${{ secrets.API_KEY }}"
