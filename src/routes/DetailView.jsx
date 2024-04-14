@@ -1,8 +1,7 @@
 import '../App.css';
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { supabase } from '../client';
-
 
 const DetailView = () => {
     let params = useParams();
@@ -30,7 +29,11 @@ const DetailView = () => {
                     <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
                     <img className='crewmateImage' src={'..\\src\\assets\\' + crewmate.color + '.webp'}></img>
                     <br></br>
-                    <button className='button button-info'>Edit Crewmate Details</button>
+                    <Link to={"/crewmates/details/" + crewmate.id + '/edit'}>
+                        <button className='button button-info'>
+                            Edit Crewmate Details
+                        </button>
+                    </Link>
                     <br></br>
                     <br></br>
                     <button className='button button-danger'>Delete Crewmate</button>
