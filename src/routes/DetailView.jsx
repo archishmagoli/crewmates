@@ -3,7 +3,42 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { supabase } from '../client';
 
+import green from '../assets/green.webp';
+import blue from '../assets/blue.webp';
+import red from '../assets/yellow.webp';
+import yellow from '../assets/orange.webp';
+import orange from '../assets/pink.webp';
+import pink from '../assets/pink.webp';
+import purple from '../assets/purple.webp';
+import cyan from '../assets/cyan.webp';
+import brown from '../assets/brown.webp';
+
 const DetailView = () => {
+    const findColor = (color) => {
+        switch (color) {
+            case 'red':
+                return red;
+            case 'blue':
+                return blue;
+            case 'green':
+                return green;
+            case 'yellow':
+                return yellow;
+            case 'orange':
+                return orange;
+            case 'purple':
+                return purple;
+            case 'pink':
+                return pink;
+            case 'cyan':
+                return cyan;
+            case 'brown':
+                return brown;
+            default:
+                break;
+        }
+    }
+
     let params = useParams();
     const [crewmate, setCrewmate] = useState(null);
 
@@ -49,7 +84,7 @@ const DetailView = () => {
                     <h2><b>{crewmate.name}</b></h2>
                     <p><b>Speed: </b>{crewmate.speed}</p>
                     <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
-                    <img className='crewmateImage' src={'..\\src\\assets\\' + crewmate.color + '.webp'}></img>
+                    <img className='crewmateImage' src={findColor(crewmate.color)}></img>
                     <br></br>
                     <Link to={"/crewmates/details/" + crewmate.id + '/edit'}>
                         <button className='button button-info'>
