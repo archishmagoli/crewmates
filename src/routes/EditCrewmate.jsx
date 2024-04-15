@@ -48,7 +48,7 @@ const EditCrewmate = () => {
             }
     
             alert('Crewmate updated successfully!');
-            window.location.replace("http://www.archishma.github.io/crewmates/");
+            window.location.replace("https://www.archishma.github.io/crewmates/");
         } catch (error) {
             alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
 

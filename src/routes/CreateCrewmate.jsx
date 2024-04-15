@@ -37,7 +37,7 @@ const CreateCrewmate = () => {
             }
     
             alert('Crewmate created successfully!', data);
-            window.location.replace("http://www.archishma.github.io/crewmates/");
+            window.location.replace("https://www.archishma.github.io/crewmates/");
         } catch (error) {
             alert('Error creating crewmate. Remember that your crewmate`s name MUST be unique.');
         }
