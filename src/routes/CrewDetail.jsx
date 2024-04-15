@@ -38,7 +38,7 @@ const CrewDetail = () => {
                         <h2><b>{crewmate.name}</b></h2>
                         <p><b>Speed: </b>{crewmate.speed}</p>
                         <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
-                        <img className='crewmateImage' src={'src\\assets\\' + crewmate.color + '.webp'}></img>
+                        <img className='crewmateImage' src={'..\\crewmates\\src\\assets\\' + crewmate.color + '.webp'}></img>
                         <br></br>
                         <Link to={"/crewmates/details/" + crewmate.id}>
                             <button className='button button-detail'>
