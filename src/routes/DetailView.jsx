@@ -70,8 +70,7 @@ const DetailView = () => {
             }
     
             alert('Successfully deleted crewmate.')
-            window.location = '/crewmates/gallery';
-            window.location.reload();
+            window.location.replace("http://www.archishma.github.io/crewmates/");
         } catch (error) {
             alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
 
