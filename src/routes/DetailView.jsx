@@ -70,7 +70,7 @@ const DetailView = () => {
             }
     
             alert('Successfully deleted crewmate.')
-            window.location.replace("https://www.archishmagoli.github.io/crewmates/");
+            window.location = '/crewmates/'
         } catch (error) {
             alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
 
