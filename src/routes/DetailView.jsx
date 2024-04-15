@@ -71,6 +71,7 @@ const DetailView = () => {
     
             alert('Successfully deleted crewmate.')
             window.location = '/crewmates/gallery';
+            window.location.reload();
         } catch (error) {
             alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
 

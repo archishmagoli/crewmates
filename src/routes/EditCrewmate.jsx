@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const EditCrewmate = () => {
     let params = useParams();
+
     const [crewmate, setCrewmate] = useState(null);
 
     useEffect(() => {
@@ -48,6 +49,7 @@ const EditCrewmate = () => {
     
             alert('Crewmate updated successfully!');
             window.location = '/crewmates/details/' + params.id;
+            window.location.reload();
         } catch (error) {
             alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
 
