@@ -48,9 +48,9 @@ const EditCrewmate = () => {
             }
     
             alert('Crewmate updated successfully!');
-            window.location = '/crewmates/'
+            window.location = '/'
         } catch (error) {
-            alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
+            alert('Error editing crewmate. Remember that your crewmate`s name MUST be unique.');
 
         }
     };

@@ -70,9 +70,9 @@ const DetailView = () => {
             }
     
             alert('Successfully deleted crewmate.')
-            window.location = '/crewmates/'
+            window.location = '/'
         } catch (error) {
-            alert('Error updating crewmate. Remember that your crewmate`s name MUST be unique.');
+            alert('Error deleting crewmate.');
 
         }
     };
@@ -86,7 +86,7 @@ const DetailView = () => {
                     <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
                     <img className='crewmateImage' src={findColor(crewmate.color)}></img>
                     <br></br>
-                    <Link to={"/crewmates/details/" + crewmate.id + '/edit'}>
+                    <Link to={"/details/" + crewmate.id + '/edit'}>
                         <button className='button button-info'>
                             Edit Crewmate Details
                         </button>

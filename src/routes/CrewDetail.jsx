@@ -61,7 +61,7 @@ const CrewDetail = () => {
                 crewmates === null || crewmates.length === 0 ?
                 <div>
                     <h2>No crewmates yet!</h2>
-                    <Link to="/crewmates/create">
+                    <Link to="/create">
                         <button className='button button-detail'>
                         Create a Crewmate Here! 
                         </button>
@@ -75,7 +75,7 @@ const CrewDetail = () => {
                         <p><b>Imposter?: </b>{crewmate.is_imposter === true ? 'Yes' : 'No'}</p>
                         <img className='crewmateImage' src={findColor(crewmate.color)}></img>
                         <br></br>
-                        <Link to={"/crewmates/details/" + crewmate.id}>
+                        <Link to={"/details/" + crewmate.id}>
                             <button className='button button-detail'>
                                 View Details 
                             </button>

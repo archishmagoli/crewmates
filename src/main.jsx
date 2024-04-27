@@ -13,12 +13,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/crewmates" element={<Layout />}>
-          <Route index={true} path='/crewmates' element={<App />} />
-          <Route index={false} path="/crewmates/gallery" element={<CrewDetail />} />
-          <Route index={false} path="/crewmates/create" element={<CreateCrewmate />} />
-          <Route index={false} path="/crewmates/details/:id" element={<DetailView />} />
-          <Route index={false} path="/crewmates/details/:id/edit" element={<EditCrewmate />} />
+        <Route path="/" element={<Layout />}>
+          <Route index={true} path='/' element={<App />} />
+          <Route index={false} path="/gallery" element={<CrewDetail />} />
+          <Route index={false} path="/create" element={<CreateCrewmate />} />
+          <Route index={false} path="/details/:id" element={<DetailView />} />
+          <Route index={false} path="/details/:id/edit" element={<EditCrewmate />} />
         </Route>
       </Routes>
     </BrowserRouter>

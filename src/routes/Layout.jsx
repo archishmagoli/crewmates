@@ -8,17 +8,17 @@ const Layout = () => {
         <div className="sidebar">
           <nav>
             <div className="links">
-                <Link style={{ color: "white" }} to="/crewmates">
+                <Link style={{ color: "white" }} to="/">
                   Home
                 </Link>
             </div>
             <div className="links">
-                <Link style={{ color: "white" }} to="/crewmates/create">
+                <Link style={{ color: "white" }} to="/create">
                   Create a Crewmate!
                 </Link>
             </div>
             <div className="links">
-                <Link style={{ color: "white" }} to="/crewmates/gallery">
+                <Link style={{ color: "white" }} to="/gallery">
                   Crewmate Gallery
                 </Link>
             </div>
